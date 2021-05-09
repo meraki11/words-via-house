@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 export const NewWordForm = (props) => {
     const [name, setName] = useState('');
     
+
     const onSubmit = (e) => {
         e.preventDefault();
         if (name) {
-            props.addNewWord({name});
+            props.addNewRoom({name});
             setName('');
             console.log(name);
         }   else {
@@ -16,7 +17,7 @@ export const NewWordForm = (props) => {
 
     return (
         <div>
-            <h4>Enter your one word</h4>
+            <h4>What is your one word</h4>
             <form onSubmit={onSubmit}>
                 <input
                     type='text'

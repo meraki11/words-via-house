@@ -8,18 +8,18 @@ export class AuthorsList extends React.Component {
     };
 
     componentDidMount() {
-        this.fetchAuthors();
+        this.fetchHouses();
     };
 
-    fetchAuthors = async () => {
+    fetchHouses = async () => {
         const houses = await authorsApi.get();
         this.setState({ houses });
     };
 
-    updateAuthor = async (updatedAuthor) => {
-        console.log('we got inside updateAuthor');
-        await authorsApi.put(updatedAuthor);
-        this.fetchAuthors();
+    updateHouse = async (updatedHouse) => {
+        console.log('we got inside updateHouse');
+        await authorsApi.put(updatedHouse);
+        this.fetchHouses();
     };
 
     render() {
@@ -29,7 +29,7 @@ export class AuthorsList extends React.Component {
                     <Author
                         house={house}
                         key={house._id}
-                        updateAuthor={this.updateAuthor}
+                        updateHouse={this.updateHouse}
                     />
                 ))}
             </div>
